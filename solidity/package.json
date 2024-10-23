@@ -1,0 +1,25 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "anvil": "anvil -p 8545",
+    "deploy:local": "forge script script/Deploy.s.sol:DeployTodoList --rpc-url http://127.0.0.1:8545 --broadcast --private-key $PRIVATE_KEY",
+    "dev": "concurrently \"npm run anvil\" \"sleep 2 && npm run deploy:local\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "dependencies": {
+    "contracts": "file:",
+    "dotenv": "^16.4.5"
+  }
+}
